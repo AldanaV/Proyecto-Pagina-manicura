@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/*MENU*/
+
+.menu {
+  background-color: #A7C7B7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 0;
+
+}
+
+/*Contenedor del logo*/
+.img-logo {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0 10px; /*arriba y abajo*/
+}
+
+/*tamaño del logo*/
+.logo {
+  height: 10rem;
+  /*width: auto;*/
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 16px;
+  padding: 8px 34px;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #9CA3AF;
+}
+
+
+/*ESLOGAN*/
+
+.eslogan {
+  position: relative;
+  height: 114vh;
+  overflow: hidden;
+}
+
+.img-eslogan {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.eslogan h1{
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: 3rem;
+  color: white;
+
+  /* centrar vertical y horizontal */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  font-family: "Newsreader", serif;
+}
+
+/* Nuestros servicios */
+
+.servicios h2{
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 4rem;
+  font-family: "Newsreader", serif;
+  color: #374151;
+}
+
+.servicios p{
+  text-align: center;
+  font-size: 17px;
+  margin-top: 1rem;
+  font-family: "Thasadith", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cards{
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 4rem 8rem;
+}
+
+.card{
+  text-align: center;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card p{
+  margin-top: 1rem;
+  font-family: "Thasadith", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/*Galeria*/
+
+.galeria-section {
+  padding: 60px 40px;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.galeria-titulo {
+  font-family: "Newsreader", serif;
+  font-size: 2.5rem;
+  color: #374151;
+  margin-bottom: 4rem;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+/*Elejinos*/
+
+.elejir-section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 250px;
+  margin-bottom: 80px;
+}
+
+.elejinos{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.elejinos img{
+  width: 100%;
+  max-width: 420px;
+}
+
+.elejir-texto{
+  flex: 1;
+}
+
+.eleji-glamour{
+  font-family: "Newsreader", serif;
+  font-size: 2.5rem;
+  color: #374151;
+  padding-bottom: 10px;
+}
+
+.elejir-texto p{
+  color:#9CA3AF;
+  line-height: 1.6;
+}
+
+.elejir-texto button{
+  margin-top: 10px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 20rem;
+  background-color: #A7C7B7;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-reserva:active {
+  transform: scale(0.97);
+}
+
+/*Footer*/
+
+.footer {
+  background-color: #A7C7B7; /* Verde salvia */
+  color: #374151;
+  padding: 60px 40px 20px;
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* BRAND */
+.footer-brand h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-family: "Newsreader", serif;
+}
+
+.footer-brand p {
+  max-width: 260px;
+  color: #374151;
+  font-family: "Thasadith", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/* LINKS */
+.footer-links h4,
+.footer-contacto h4 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #374151;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+}
+
+/* CONTACTO */
+.footer-contacto p {
+  margin-bottom: 6px;
+}
+
+
+.footer-redes ul {
+    list-style: none; 
+    padding: 0;  
+    margin: 0;
+}
+
+.footer-redes a {
+    text-decoration: none;
+}
+
+
+.footer-redes li {
+    margin-bottom: 15px; 
+}
+
+.footer-redes li:last-child {
+    margin-bottom: 0;
+}
+
+
+.footer-copy {
+  margin-top: 40px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.footer-redes p,h4 {
+  margin-bottom: 10px;
+}
+
+.footer-redes p:hover{
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Medias queries*/
+
+/*Mobile*/
+
+@media (max-width: 600px) {
+
+  .logo {
+    height: 5rem;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu a {
+    padding: 10px 0;
+  }
+}
+
+/*Tablet*/
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .logo {
+    height: 6.5rem;
+  }
+
+  .menu ul {
+    gap: 20px;
+  }
+
+  .menu a {
+    padding: 8px 20px;
+  }
+}
+
+/*Deskpot grande*/
+
+@media (min-width: 1200px) {
+
+  .menu a {
+    font-size: 18px;
+  }
+}
+
+
+/*Elejinos*/
+
+@media (max-width: 768px) {
+  .elejir-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/*Footer*/
+
+@media (max-width: 768px) {
+  .footer-contenido {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+}
