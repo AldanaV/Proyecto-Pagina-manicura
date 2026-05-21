@@ -1,49 +1,54 @@
+/* ==========================================================================
+   1. ESTILOS BASE (MOBILE FIRST - Celulares por defecto)
+   ========================================================================== */
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Evita que el padding rompa los anchos */
 }
 
 body {
   font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-/*MENU*/
-
+/* --- MENU --- */
 .menu {
   background-color: #A7C7B7;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 14px 0;
-
 }
 
-/*Contenedor del logo*/
 .img-logo {
   background-color: white;
   display: flex;
   justify-content: center;
-  padding: 15px 0 10px; /*arriba y abajo*/
+  padding: 15px 0 10px;
+  width: 100%; /* Asegura que ocupe todo el ancho en móvil */
 }
 
-/*tamaño del logo*/
 .logo {
-  height: 10rem;
-  /*width: auto;*/
+  height: 5rem; /* Tamaño móvil por defecto */
 }
 
 .menu ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  flex-direction: column; /* Lista vertical en móvil */
+  align-items: center;
+  gap: 15px;
 }
 
 .menu a {
   text-decoration: none;
   color: #374151;
   font-size: 16px;
-  padding: 8px 34px;
+  padding: 10px 0;
   transition: color 0.3s ease;
 }
 
@@ -51,68 +56,56 @@ body {
   color: #9CA3AF;
 }
 
-
-/*ESLOGAN*/
+/* --- ESLOGAN --- */
+.container {
+  width: 100%;
+}
 
 .eslogan {
-  position: relative;
-  height: 114vh;
+  width: 100%;
+  height: auto;       /* ¡CLAVE! En móvil el contenedor se adapta al alto de la foto */
   overflow: hidden;
+  background-color: #C2BFB9; 
 }
 
 .img-eslogan {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  width: 100%;        /* Ocupa todo el ancho del celular */
+  height: auto;       /* ¡CLAVE! Hace que la imagen se achique proporcionalmente sin deformar el texto */
+  display: block;     /* Elimina espacios vacíos inline por defecto */
+  object-fit: contain; /* En móvil asegura que se vea TODA la imagen con su texto sin recortarse */
 }
 
-.eslogan h1{
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  font-size: 3rem;
-  color: white;
 
-  /* centrar vertical y horizontal */
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding-left: 60px;
-  font-family: "Newsreader", serif;
-}
 
-/* Nuestros servicios */
-
-.servicios h2{
+/* --- NUESTROS SERVICIOS (CARDS) --- */
+.servicios h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-top: 4rem;
+  font-size: 2rem;
+  margin-top: 3rem;
   font-family: "Newsreader", serif;
   color: #374151;
 }
 
-.servicios p{
+.servicios p {
   text-align: center;
   font-size: 17px;
   margin-top: 1rem;
   font-family: "Thasadith", sans-serif;
   font-weight: 400;
   font-style: italic;
+  padding: 0 20px;
 }
 
-.cards{
+.cards {
   display: flex;
-  justify-content: space-between;
-  gap: 4rem;
-  padding: 4rem 8rem;
+  flex-direction: column; /* Una tarjeta abajo de la otra en móvil */
+  gap: 3rem;
+  padding: 2rem 20px;
 }
 
-.card{
+.card {
   text-align: center;
-  flex: 1;
+  width: 100%; /* Asegura que cada tarjeta ocupe todo el ancho en móvil */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -121,39 +114,38 @@ body {
   box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-.card img{
+.card img {
   width: 100%;
-  height: 100%;
+  height: 350px; /* Controlamos que no se hagan gigantes verticalmente en móvil */
   object-fit: cover;
+  border-radius: 8px;
 }
 
-.card p{
+.card p {
   margin-top: 1rem;
   font-family: "Thasadith", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
 
-
-/*Galeria*/
-
+/* --- GALERIA --- */
 .galeria-section {
-  padding: 60px 40px;
+  padding: 40px 20px;
   background-color: #FFFFFF;
   text-align: center;
 }
 
 .galeria-titulo {
   font-family: "Newsreader", serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #374151;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Fotos más chicas adaptables en móvil */
+  gap: 15px;
 }
 
 .galeria img {
@@ -164,51 +156,50 @@ body {
 }
 
 .galeria img:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-
-/*Elejinos*/
-
-.elejir-section{
+/* --- SECCION ELEGIR --- */
+.elegir-section {
   display: flex;
+  flex-direction: column; /* Vertical en móvil */
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 40px 250px;
-  margin-bottom: 80px;
+  text-align: center;
+  gap: 30px;
+  padding: 40px 20px;
+  margin-bottom: 40px;
 }
 
-.elejinos{
-  flex: 1;
+.eleginos {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.elejinos img{
+.eleginos img {
   width: 100%;
-  max-width: 420px;
+  max-width: 280px; /* Imagen de elegir más chica para pantallas móviles */
 }
 
-.elejir-texto{
-  flex: 1;
+.elegir-texto {
+  width: 100%;
 }
 
-.eleji-glamour{
+.elegir-glamour {
   font-family: "Newsreader", serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #374151;
   padding-bottom: 10px;
 }
 
-.elejir-texto p{
-  color:#9CA3AF;
+.elegir-texto p {
+  color: #9CA3AF;
   line-height: 1.6;
 }
 
-.elejir-texto button{
-  margin-top: 10px;
+.elegir-texto button {
+  margin-top: 15px;
   padding: 12px 30px;
   border: none;
   border-radius: 20rem;
@@ -224,22 +215,21 @@ body {
   transform: scale(0.97);
 }
 
-/*Footer*/
-
+/* --- FOOTER --- */
 .footer {
-  background-color: #A7C7B7; /* Verde salvia */
+  background-color: #A7C7B7;
   color: #374151;
-  padding: 60px 40px 20px;
+  padding: 40px 20px 20px;
 }
 
 .footer-contenido {
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
+  flex-direction: column; /* Todo centrado y vertical en móvil */
+  align-items: center;
+  text-align: center;
+  gap: 30px;
 }
 
-/* BRAND */
 .footer-brand h3 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -247,64 +237,52 @@ body {
 }
 
 .footer-brand p {
-  max-width: 260px;
+  max-width: 100%;
   color: #374151;
   font-family: "Thasadith", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
 
-
-/* LINKS */
 .footer-links h4,
-.footer-contacto h4 {
+.footer-contacto h4,
+.footer-redes h4 {
   margin-bottom: 12px;
   font-size: 18px;
 }
 
-.footer-links ul {
+.footer-links ul,
+.footer-redes ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-links li {
   margin-bottom: 8px;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-redes a {
   text-decoration: none;
   color: #374151;
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-redes p:hover {
   color: #FFFFFF;
+  cursor: pointer;
 }
 
-/* CONTACTO */
-.footer-contacto p {
-  margin-bottom: 6px;
+.footer-contacto p,
+.footer-redes p {
+  margin-bottom: 8px;
 }
-
-
-.footer-redes ul {
-    list-style: none; 
-    padding: 0;  
-    margin: 0;
-}
-
-.footer-redes a {
-    text-decoration: none;
-}
-
 
 .footer-redes li {
-    margin-bottom: 15px; 
+  margin-bottom: 12px;
 }
-
-.footer-redes li:last-child {
-    margin-bottom: 0;
-}
-
 
 .footer-copy {
   margin-top: 40px;
@@ -315,109 +293,157 @@ body {
   color: #374151;
 }
 
-.footer-redes p,h4 {
-  margin-bottom: 10px;
-}
 
-.footer-redes p:hover{
-  color: #FFFFFF;
-  cursor: pointer;
-}
+/* ==========================================================================
+   2. MEDIA QUERIES (Creciendo hacia pantallas más grandes)
+   ========================================================================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Medias queries*/
-
-/*Mobile*/
-
-@media (max-width: 600px) {
-
-  .logo {
-    height: 5rem;
-  }
-
-  .menu ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .menu a {
-    padding: 10px 0;
-  }
-}
-
-/*Tablet*/
-
-@media (min-width: 601px) and (max-width: 900px) {
-
+/* TABLETS (Desde 601px hasta 1024px) */
+@media (min-width: 601px) {
+  
   .logo {
     height: 6.5rem;
   }
 
   .menu ul {
+    flex-direction: row;
     gap: 20px;
   }
 
   .menu a {
     padding: 8px 20px;
   }
-}
 
-/*Deskpot grande*/
-
-@media (min-width: 1200px) {
-
-  .menu a {
-    font-size: 18px;
+  .img-eslogan {
+    max-height: 70vh; 
+    object-fit: cover; /* Cambia a cover si preferís que llene más la pantalla */
   }
 }
 
-
-/*Elejinos*/
-
-@media (max-width: 768px) {
-  .elejir-section {
-    flex-direction: column;
-    text-align: center;
+  .cards {
+    flex-direction: row;
+    gap: 2rem;
+    padding: 3rem 2rem;
   }
-}
 
+  .card{
+    flex: 1;
+    width: 0; 
+  }
 
-/*Footer*/
+  .card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    max-height: none;
+  }
 
-@media (max-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .elegir-section {
+    flex-direction: row;
+    text-align: left;
+    padding: 40px 60px;
+  }
+
+  .eleginos img {
+    max-width: 340px;
+  }
+
   .footer-contenido {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    align-items: flex-start;
   }
 
   .footer-brand p {
-    max-width: 100%;
+    max-width: 260px;
+  }
+
+
+/* PC / DESKTOP (Desde 1025px en adelante) */
+@media (min-width: 1025px) {
+
+  .logo {
+    height: 10rem;
+  }
+
+  .menu a {
+    padding: 8px 34px;
+  }
+
+  .eslogan {
+    height: 114vh;     /* Volvemos a tu altura original e imponente de PC */
+  }
+
+  .img-eslogan {
+    width: 100%;
+    height: 100%;      /* Ocupa el 100% de los 114vh */
+    max-height: none;  /* Quitamos cualquier límite de tablet */
+    object-fit: cover; /* Hace que llene toda la pantalla de la PC como lo tenías planeado */
+  }
+
+  .servicios h2 {
+    font-size: 2.5rem;
+    margin-top: 4rem;
+  }
+
+  .cards {
+    flex-direction: row;
+    gap: 4rem;
+    padding: 4rem 8rem;
+  }
+
+  /* ARREGLO AQUÍ: Forzamos a que las tres tarjetas tengan el mismo ancho */
+  .card {
+    flex: 1; /* Esto hace que cada tarjeta ocupe el mismo espacio disponible */
+    width: 0; /* Ayuda a que el flex: 1 funcione mejor para anchos iguales */
+  }
+
+  .card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    max-height: none; 
+  }
+
+  .galeria-section {
+    padding: 60px 40px;
+  }
+
+  .galeria-titulo {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .galeria {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .elegir-section {
+    padding: 40px 250px;
+    margin-bottom: 80px;
+  }
+
+  .eleginos img {
+    max-width: 420px;
+  }
+
+  .elegir-glamour {
+    font-size: 2.5rem;
+  }
+
+  .footer {
+    padding: 60px 40px 20px;
+  }
+}
+
+/* PC GRANDES */
+@media (min-width: 1200px) {
+  .menu a {
+    font-size: 18px;
   }
 }
