@@ -5,7 +5,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Evita que el padding rompa los anchos */
+  box-sizing: border-box; 
 }
 
 body {
@@ -29,17 +29,17 @@ body {
   display: flex;
   justify-content: center;
   padding: 15px 0 10px;
-  width: 100%; /* Asegura que ocupe todo el ancho en móvil */
+  width: 100%; 
 }
 
 .logo {
-  height: 5rem; /* Tamaño móvil por defecto */
+  height: 5rem; 
 }
 
 .menu ul {
   list-style: none;
   display: flex;
-  flex-direction: column; /* Lista vertical en móvil */
+  flex-direction: column; 
   align-items: center;
   gap: 15px;
 }
@@ -63,16 +63,16 @@ body {
 
 .eslogan {
   width: 100%;
-  height: auto;       /* ¡CLAVE! En móvil el contenedor se adapta al alto de la foto */
+  height: auto;      
   overflow: hidden;
   background-color: #C2BFB9; 
 }
 
 .img-eslogan {
-  width: 100%;        /* Ocupa todo el ancho del celular */
-  height: auto;       /* ¡CLAVE! Hace que la imagen se achique proporcionalmente sin deformar el texto */
-  display: block;     /* Elimina espacios vacíos inline por defecto */
-  object-fit: contain; /* En móvil asegura que se vea TODA la imagen con su texto sin recortarse */
+  width: 100%;        
+  height: auto;       
+  display: block;     
+  object-fit: contain; 
 }
 
 
@@ -98,14 +98,14 @@ body {
 
 .cards {
   display: flex;
-  flex-direction: column; /* Una tarjeta abajo de la otra en móvil */
+  flex-direction: column; 
   gap: 3rem;
   padding: 2rem 20px;
 }
 
 .card {
   text-align: center;
-  width: 100%; /* Asegura que cada tarjeta ocupe todo el ancho en móvil */
+  width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -116,7 +116,7 @@ body {
 
 .card img {
   width: 100%;
-  height: 350px; /* Controlamos que no se hagan gigantes verticalmente en móvil */
+  height: 350px; 
   object-fit: cover;
   border-radius: 8px;
 }
@@ -144,7 +144,7 @@ body {
 
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Fotos más chicas adaptables en móvil */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
   gap: 15px;
 }
 
@@ -163,7 +163,7 @@ body {
 /* --- SECCION ELEGIR --- */
 .elegir-section {
   display: flex;
-  flex-direction: column; /* Vertical en móvil */
+  flex-direction: column; 
   align-items: center;
   text-align: center;
   gap: 30px;
@@ -179,7 +179,7 @@ body {
 
 .eleginos img {
   width: 100%;
-  max-width: 280px; /* Imagen de elegir más chica para pantallas móviles */
+  max-width: 280px; 
 }
 
 .elegir-texto {
@@ -224,7 +224,7 @@ body {
 
 .footer-contenido {
   display: flex;
-  flex-direction: column; /* Todo centrado y vertical en móvil */
+  flex-direction: column; 
   align-items: center;
   text-align: center;
   gap: 30px;
@@ -316,7 +316,7 @@ body {
 
   .img-eslogan {
     max-height: 70vh; 
-    object-fit: cover; /* Cambia a cover si preferís que llene más la pantalla */
+    object-fit: cover; 
   }
 }
 
@@ -376,14 +376,14 @@ body {
   }
 
   .eslogan {
-    height: 114vh;     /* Volvemos a tu altura original e imponente de PC */
+    height: 114vh;    
   }
 
   .img-eslogan {
     width: 100%;
-    height: 100%;      /* Ocupa el 100% de los 114vh */
-    max-height: none;  /* Quitamos cualquier límite de tablet */
-    object-fit: cover; /* Hace que llene toda la pantalla de la PC como lo tenías planeado */
+    height: 100%;     
+    max-height: none;  
+    object-fit: cover; 
   }
 
   .servicios h2 {
@@ -397,10 +397,10 @@ body {
     padding: 4rem 8rem;
   }
 
-  /* ARREGLO AQUÍ: Forzamos a que las tres tarjetas tengan el mismo ancho */
+ 
   .card {
-    flex: 1; /* Esto hace que cada tarjeta ocupe el mismo espacio disponible */
-    width: 0; /* Ayuda a que el flex: 1 funcione mejor para anchos iguales */
+    flex: 1; 
+    width: 0; 
   }
 
   .card img {
